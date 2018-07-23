@@ -1,0 +1,6 @@
+# JAVASCRIPT FRONT-END PROJECT GUIDE 
+
+**2018-07-23**
+
+## 숫자 두개 평균값 구하기
+
