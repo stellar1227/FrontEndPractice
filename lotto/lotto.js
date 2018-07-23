@@ -12,26 +12,99 @@
  * 또한 매번 발생시키는 난수는 값이 아닌 배열의 인덱스가 된다.
  */
 
-var list = [];
-for(var i = 1; i <= 45; i++){
-list.push(i);
-}
+/*ES5 */
+(function(){
 
-var lottoList = [];
-for(var i = 0; i < 6; i++){
+    var lottoList = function(max,num){
+        this.max = max;
+        this.num = num;
+    };
 
-    var index = Math.floor(Math.random() * list.length);
+    lottoList.prototype.createList = function(){
+        this.list = [];
+        for(var i = 1; i <= this.max; i++){
+            this.list.push(i);
+        }
+    }
 
-    lottoList.push(list[index]);
+    lottoList.prototype.pickNumber = function(){
+        this.lottoList = [];
+        var _list = this.list;
+
+        for(var i = 0; i < this.num; i++){
+            var _idx = Math.floor(Math.random() * _list.length);
+
+            this.lottoList.push(_list[_idx]);
+            _list.splice(_idx, 1);
+        }
+    }
+
+    lottoList.prototype.render = function(){
+        // Q : render 함수안에서는 순수하게 render관련된 것만 있어야 하나 ? 밖에서 호출? 
+        this.createList();
+        this.pickNumber();
+
+        var _list = this.lottoList;
+
+        //sort의 기본 정렬 알고리즘은 unicode 코드값을 기반으로 한다.
+        _list.sort(function(a,b){
+            return a - b;
+        }); 
+
+        for(var i = 0; i < _list.length; i++){
+            document.body.innerHTML += '<span>' + _list[i] + '</span>';
+        }
+        
+        document.body.innerHTML += '</br>';
+    }
+
+    var a = new lottoList(45, 6);
+    a.render();
     
-    list.splice(index, 1);
+})()
+
+
+/*ES2015+ */
+const lottoList = class{
+    constructor(max, num){
+        this.max = max;
+        this.num = num;
+        this.state = {
+            list : [],
+            result : []
+        }
+    }
+
+    createList(){
+        for(let i = 1; i <= this.max; i++){
+            this.state.list.push(i);
+        }
+    }
+
+    pickNumber(){
+        let { list , result } = this.state;
+        for(let i = 0; i < this.num; i++){
+            let _idx = Math.floor(Math.random() * list.length);
+            result.push(list[_idx]);
+            list.splice(_idx, 1);
+        }
+    }
+
+    render(){
+        const { result } = this.state;
+        this.createList();
+        this.pickNumber();
+
+        result.sort(function(a, b){
+            return a - b;
+        })
+        
+        for(let i = 0 ; i < result.length; i++){
+            document.body.innerHTML += '<span>' + result[i] + '</span>';
+        }
+        document.body.innerHTML += '</br>';   
+    }
 }
 
-for(var i = 0; i < lottoList.length; i++){
-    document.body.innerHTML += '<span>' + lottoList[i] + '</span>';
-}
-
-
-
-
-
+var a = new lottoList(45, 6);
+a.render();
