@@ -14,7 +14,6 @@
 
 /*ES5 */
 (function(){
-
     var lottoList = function(max,num){
         this.max = max;
         this.num = num;

@@ -1,0 +1,73 @@
+@charset 'utf-8';
+
+*{
+    margin:0;
+    padding:0;
+}
+
+#basketBall{
+    width:500px;
+    margin:50px auto;
+    border:1px solid #ccc;
+    text-align: center;
+}
+
+.score_section{
+    padding:20px;
+    border-bottom:1px solid #ccc
+}
+
+.user_ctrl_section{
+    overflow: hidden;
+    padding:20px;
+    text-align: center;
+}
+
+.remain_shoot{
+    margin-bottom:10px;
+}
+.remain_shoot span{
+    display: inline-block;
+    vertical-align: middle;
+    padding:5px 10px;
+    border:1px solid #ccc
+}
+.score_box{
+    box-sizing: border-box;
+    float:left;
+    width:50%;
+    padding:20px;
+}
+.score_box span{
+    display: block;
+    padding:10px 20px;
+    border:1px solid #ccc;
+    font-size:20px;
+    font-weight:700;
+    margin-top:10px;
+}
+.comment{
+    clear:both;
+    border:1px dashed tomato;
+    padding:5px;
+    width:80%;
+    margin:0 auto;
+}
+.ui_box{
+    display: inline-block;
+    margin-right:30px;
+}
+.ui_box strong{
+    display: block;
+    margin-bottom:10px;
+}
+.ui_box .btn_shoot{
+    margin:0 5px;
+    padding:10px 20px;
+    background:pink;
+    border:1px solid #ccc;
+    cursor: pointer;
+}
+.ui_box .btn_shoot:disabled{
+    background:#ddd
+}
