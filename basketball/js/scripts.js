@@ -20,103 +20,105 @@
     var isComputerTurn = true;
     var shotsLeft = 15;
 
+    function showText(str){
+        var commentElem = document.getElementById('comment');
+        commentElem.innerHTML = str;
+    }
+
+    function updateComputerScore(score){
+        var comScoreElem = document.getElementById('computerScore');
+        comScore += score;
+        comScoreElem.innerHTML = score;
+    }
+
+    function updateUserScore(score){
+        var userScoreElem = document.getElementById('userScore');
+        userScore += score;
+        userScoreElem.innerHTML = score;
+    }
+    function disableComputerButtons(flag){
+        var btnComputer = document.getElementsByClassName('btnComputer');
+        for(var i = 0; i < btnComputer.length; i++){
+            btnComputer[i].disabled = flag;
+        }
+    }
+
+    function disableUserButtons(flag){
+        var btnUser = document.getElementsByClassName('btnUser');
+        for(var i = 0; i < btnUser.length; i++){
+            btnUser[i].disabled = flag;
+        }
+    }
+
     function onComputerShoot(){
         if(!isComputerTurn) return;
-
-        var commentElem = document.getElementById('comment');
-        var comScoreElem = document.getElementById('computerScore');
-
         var shootType = Math.random() < 0.5 ? 2: 3;
 
         if(shootType === 2){
             if(Math.random() < 0.5){
                 //2점슛 1/2확률로 성공
-                commentElem.innerHTML = '컴퓨터가 2점슛을 성공 시켰습니다';
-                comScore += 2;
-                comScoreElem.innerHTML = comScore;
+                showText('컴퓨터가 2점슛을 성공 시켰습니다');
+                updateComputerScore(2);
             }else{
                 //실패
-                commentElem.innerHTML = '컴퓨터가 2점슛을 실패했습니다.';
+                showText('컴퓨터가 2점슛을 실패했습니다.');
             }
         }else{
             if(Math.random() < 0.33){
                 //3점 슛 1/3 확률로 성공
-                commentElem.innerHTML = '컴퓨터가 3점슛을 성공 시켰습니다';
-                comScore += 3;
-                comScoreElem.innerHTML = comScore;
+                showText('컴퓨터가 3점슛을 성공 시켰습니다');
+                updateComputerScore(3);
             }else{
                 //실패
-                commentElem.innerHTML = '컴퓨터가 2점슛을 실패했습니다.';
+                showText('컴퓨터가 2점슛을 실패했습니다.');
             }
         }
         isComputerTurn = false;
-        var btnComputer = document.getElementsByClassName('btnComputer');
-        for(var i = 0; i < btnComputer.length; i++){
-            btnComputer[i].disabled = true;
-        }
-        var btnUser = document.getElementsByClassName('btnUser');
-        for(var i = 0; i < btnUser.length; i++){
-            btnUser[i].disabled = false;
-        }
+        disableComputerButtons(true);
+        disableUserButtons(false);
     }
 
     function onUserShoot(shootType){
         if(isComputerTurn) return;
-
-        var commentElem = document.getElementById('comment');
-        var userScoreElem = document.getElementById('userScore');
-
         if(shootType === 2){
             if(Math.random() < 0.5){
                 //2점슛 1/2확률로 성공
-                commentElem.innerHTML = '사용자가 2점슛을 성공 시켰습니다';
-                comScore += 2;
-                userScoreElem.innerHTML = comScore;
+                showText('사용자가 2점슛을 성공 시켰습니다');
+                updateUserScore(2)
             }else{
                 //실패
-                commentElem.innerHTML = '사용자가 2점슛을 실패했습니다.';
+                showText('사용자가 2점슛을 실패했습니다.');
             }
         }else{
             if(Math.random() < 0.33){
                 //3점 슛 1/3 확률로 성공
-                commentElem.innerHTML = '사용자가 3점슛을 성공 시켰습니다';
-                comScore += 3;
-                userScoreElem.innerHTML = comScore;
+                showText('사용자가 3점슛을 성공 시켰습니다');
+                updateUserScore(3);
             }else{
                 //실패
-                commentElem.innerHTML = '사용자가 2점슛을 실패했습니다.';
+                showText('사용자가 2점슛을 실패했습니다.');
             }
         }
 
         isComputerTurn = true;
-        var btnComputer = document.getElementsByClassName('btnComputer');
-        for(var i = 0; i < btnComputer.length; i++){
-            btnComputer[i].disabled = false;
-        }
-        var btnUser = document.getElementsByClassName('btnUser');
-        for(var i = 0; i < btnUser.length; i++){
-            btnUser[i].disabled = true;
-        }
+        disableComputerButtons(false);
+        disableUserButtons(true);
+
         shotsLeft--;
         var shotsLeftElem = document.getElementById('reaminShoot');
         shotsLeftElem.innerHTML = shotsLeft;
 
         if(shotsLeft === 0){
             if(userScore > comScore){
-                commentElem.innerHTML = "승리했습니다";
+                showText('승리했습니다');
             }else if(userScore === comScore){
-                commentElem.innerHTML = "비겼습니다"
+                showText('비겼습니다');
             }else{
-                commentElem.innerHTML = "졌습니다."
+                showText('졌습니다.');
             }
 
-            
-            for(var i = 0; i < btnComputer.length; i++){
-                btnComputer[i].disabled = true;
-            }
-            for(var i = 0; i < btnUser.length; i++){
-                btnUser[i].disabled = true;
-            }
+            disableComputerButtons(true);
+            disableUserButtons(true);
         }
 
     }
