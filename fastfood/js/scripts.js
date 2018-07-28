@@ -85,6 +85,7 @@ var showPaging = function(page, perpage, total, keyword){
         $paging.append($elem);
     }
 
+    
     var $nextElem = $('<button type="button" onclick="searchFN('+ nextPage + ',' + perpage + ');">다음</button>');
     $nextElem.addClass('next');
     $paging.append($nextElem)
