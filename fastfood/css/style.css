@@ -1,0 +1,141 @@
+@charset 'utf-8';
+
+*{
+    margin:0;
+    padding:0
+}
+
+html, body, input, button{
+    font-family: Hevetica, '굴림', sans-serif;
+    font-size:14px;
+    color:#666
+}
+
+ol,ul{
+    list-style: none;
+}
+
+img{
+    vertical-align: top;
+}
+
+input{
+    box-sizing: border-box;
+    border:1px solid #ccc;
+    background: #fff;
+    padding:0 10px;
+    height:32px;
+    line-height:30px;    
+}
+
+button{
+    border:1px solid #ccc;
+    background:#ededed;
+    padding:0 10px;
+    height:32px;
+    cursor: pointer;
+}
+
+.blind{
+    position: absolute;
+    left:-9999px;
+}
+
+
+#fast_food{
+    padding:20px;
+    width:500px;
+}
+
+.header{
+    overflow: hidden;
+    padding:10px;
+    border:1px solid tomato;
+    border-radius:4px;
+    margin-bottom: 20px;
+}
+.header h1{
+    display: inline-block;
+    font-size:18px;
+    color:tomato;
+    vertical-align: middle;
+}
+.search_sec{
+    position: relative;
+    display: inline-block;
+    width:230px;
+    vertical-align: middle;
+    padding-right:70px;
+}
+.search_sec input[type="text"]{
+    width:100%;
+}
+.search_sec .btn_srch{
+    width:60px;
+    position: absolute;
+    right:0;
+    top:0;
+    font-weight:700;
+    letter-spacing: -1px;
+}
+
+.msg{
+    display: block;
+    margin-bottom: 10px;
+    color:orangered;
+}
+.msg .total{
+    font-weight:700
+}
+
+
+
+.list{
+    margin-bottom: 30px;
+}
+
+.list li{
+    border:1px solid #ccc;
+    border-radius: 4px;
+    display: table;
+    width:100%;
+    margin-bottom: 10px;
+}
+
+.list li:last-child{
+    margin-bottom: 0;
+}
+
+.list li .num{
+    display: table-cell;
+    vertical-align: middle;
+    font-size:20px;
+    width:60px;
+    text-align: center;
+    padding:10px;
+}
+.list li .info{
+    display: table-cell;
+    vertical-align: middle;
+    padding:10px;
+}
+.list li .info .name{
+    display: block;
+    font-weight:700;
+    color:#333;
+    margin-bottom: 10px;
+}
+
+.pagination{
+    width:100%;
+    text-align: center;
+}
+.pagination a{
+    margin: 0 5px;
+}
+.pagination .current{
+    color:red;
+}
+.pagination button{
+    margin:0 5px;
+}
