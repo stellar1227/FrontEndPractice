@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>마이트립어드바이저</title>
+    <link rel="stylesheet" href="libs/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="inner_header">
+                <h1 class="logo"><a href="index.html">마이트립어드바이저</a></h1>
+                <div class="util">
+                    <a href="mytrip.html">마이트립</a>
+                    <a href="register.html">회원가입</a>
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <section id="content">
+                <h2 class="title">어디로 떠나볼까요?</h2>
+                <p class="title_sub_txt">Where do you want to go?</p>
+                <section id="searchPannel">
+                    <h3 class="blind">일정선택</h3>
+                    <form action="" id="formSearch">
+                        <div class="pannel_block">
+                            <label for="from">일정이 언제에요?</label>
+                            <input type="text" id="from" readonly >
+                        </div>
+                        <div class="pannel_block">
+                            <label for="to">일정이 언제까지에요?</label>
+                            <input type="text" id="to" readonly >
+                        </div>
+                        <button type="submit" class="btn_srch">검색</button>
+                    </form>
+                </section>
+                <section id="searchList">
+                    <h3 class="blind">resultList</h3>
+                    <div id="list" class="tour_list">
+                        
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+    <article id="template">
+        <dl>
+            <dt class="name"></dt>
+            <dd class="city"></dd>
+            <dd class="img"></dd>
+        </dl>
+    </article>
+    <script src="libs/jquery-3.3.1.min.js"></script>
+    <script src="libs/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
