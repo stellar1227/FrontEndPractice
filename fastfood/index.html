@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>패스트 푸드점 찾기</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <div id="fast_food">
+        <header class="header">
+            <h1>FAST FOOD점 찾기</h1>
+            <section class="search_sec">
+                <h2 class="blind">검색영역</h2>
+                <input type="text" placeholder="검색 키워드 입력" id="inputSearch" />
+                <button type="button" class="btn_srch">검색</button>
+            </section>
+        </header>
+        <div class="container">
+            <p class="msg"></p>
+            <div class="search_result">
+                <ul class="list">
+                    <li id="template"><!-- loop -->
+                        <span class="num"></span>
+                        <div class="info">
+                            <p class="name"></p>
+                            <p class="address"></p>
+                        </div>
+                    </li><!-- //loop -->
+                </ul>
+                <div class="pagination"></div>
+            </div>
+
+        </div>
+    </div>
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
