@@ -50,9 +50,12 @@
             return a - b;
         }); 
 
+        /*
         for(var i = 0; i < _list.length; i++){
             document.body.innerHTML += '<span>' + _list[i] + '</span>';
         }
+        */
+        document.body.innerHTML += _list.map(item => '<span>' + item + '</span>');
         
         document.body.innerHTML += '</br>';
     }
