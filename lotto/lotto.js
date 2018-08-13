@@ -94,9 +94,12 @@ const lottoList = class{
         this.createList();
         this.pickNumber();
 
+        /*
         result.sort(function(a, b){
             return a - b;
         })
+        */
+        result.sort((a, b) => a - b);
         
         for(let i = 0 ; i < result.length; i++){
             document.body.innerHTML += '<span>' + result[i] + '</span>';
