@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>마이트립어드바이저 - 회원가입</title>
+    <link rel="stylesheet" href="libs/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="inner_header">
+                <h1 class="logo"><a href="index.html">마이트립어드바이저</a></h1>
+                <div class="util">
+                    <a href="mytrip.html">마이트립</a>
+                    <a href="register.html">회원가입</a>
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <section class="login">
+                <h2 class="blind">회원가입</h2>
+                <strong class="tit">
+                    <span class="name">마이트립</span>
+                    <span>어드바이저</span>
+                </strong>
+                <p class="txt">필수 정보를 입력하세요</p>
+                <form action="" id="formRegister">
+                    <input type="email" class="i_email"  placeholder="이메일주소" autofocus />
+                    <p class="txt_warning"></p>
+
+                    <input type="password" class="i_pswd" placeholder="비밀번호" />
+                    <p class="txt_warning"></p>
+                    <input type="password" class="i_pswd_confirm" placeholder="비밀번호 확인" />
+                    <p class="txt_warning"></p>
+
+                    <div class="gender">
+                        <label for="male">남자</label>
+                        <input type="radio" id="male" name="gender" value="m">
+                        <label for="female" >여자</label>
+                        <input type="radio" id="female"  name="gender" value="f">
+                    </div>
+                    <p class="txt_warning"></p>
+                    <select name="" id="birth" class="birth">
+                        <option value="">출생년도 선택</option>
+                    </select>
+                    <p class="txt_warning"></p>
+                    <div class="accept">
+                        <input type="checkbox" id="agree" />
+                        <label for="agree">회원가입을 위한 개인정보 제공에 동의합니다.</label>
+                    </div>
+                    <p class="txt_warning"></p>
+                    <button type="submit" class="btn_register" >가입하기</button>
+                    <button type="submit" class="btn_back" >돌아가기</button>
+                </form>
+            </section>
+
+        </div>
+    </div>
+    <script src="libs/jquery-3.3.1.min.js"></script>
+    <script src="libs/jquery-ui-1.12.1/jquery-ui.min.js"></script>  
+    <script src="scripts/register.js"></script>
+</body>
+</html>
