@@ -1,11 +1,11 @@
 @charset 'utf-8';
 @font-face{
-    font-family : 'Heebo'
+    font-family : 'Heebo';
     src : url('../fonts/Heebo-Regular.ttf') format('truetype');
 
 }
 @font-face{
-    font-family : 'Heebo'
+    font-family : 'Heebo';
     src : url('../fonts/Heebo-Bold.ttf') format('truetype');
     font-weight:700
 }
@@ -26,6 +26,10 @@ html, body{
 .blind{
     position: absolute;
     left:-9999px;
+}
+
+ul,ol{
+    list-style:none;
 }
 
 #wrap{
@@ -103,6 +107,10 @@ button{
     color:#000;
 }
 
+#container{
+    padding-top:50px;
+    box-sizing:border-box;
+}
 #content{
     width:1080px;
     margin:0 auto;
@@ -192,6 +200,7 @@ button{
     padding-top:265px;
     margin:10px;
     background:#fff;
+    cursor:pointer;
 }
 .list_panel .img{
     position: absolute;
@@ -223,4 +232,213 @@ button{
     height:16px;
     background:url(../images/icon_list_location.png) no-repeat 0 0;
     margin-right:8px;
+}
+
+.detail_section{    
+    padding:10px 20px;
+    background: #fff;
+}
+
+.view_header{
+   overflow: hidden;
+}
+.view_header .path{
+   float:left;
+   line-height:40px;
+   margin-bottom: 30px;
+}
+.view_header .path .name{
+    font-weight:700;
+    font-size:16px;
+    color:#333;
+    vertical-align: middle;
+    margin-right:10px;
+}
+.view_header .path .city{
+    display: inline-block;
+    padding-left:15px;
+    vertical-align: middle;
+    font-size:0.9rem;
+    background: url(../images/icon_list_location.png) no-repeat 0 50%;
+}
+.view_header .btn_register{
+   float:right;
+   padding:0 20px;
+   background: #4299e1;
+   color:#fff;
+   border:0;
+   height:40px;
+}
+.detail_section .img{
+    width:100%;
+    height:400px;
+    margin:0 auto 20px;
+    background: #ccc;
+}
+.detail_section .img img{
+    width:100%;
+    height:100%;
+}
+.detail_section .place{
+    margin-bottom: 20px;
+}
+.detail_section .dd{
+    font-size:14px;
+    line-height:150%;
+}
+.detail_section .descript_title{
+    font-size: 16px;
+    font-weight:700;
+    letter-spacing: -1px;
+}
+.detail_section #map{
+    width:100%;
+    height:300px;
+}
+
+.my_trips_section{
+    background:#fff;
+    margin:20px 0;
+    height:500px;
+    padding:20px;
+    font-size:0;
+}
+
+.my_map{
+    display: inline-block;
+    width: 580px;
+    height:100%;
+    background: gray;
+    vertical-align: top;
+}
+.my_list{
+    display: inline-block;
+    width:440px;
+    margin-left:20px;
+    vertical-align: top;
+    height:500px;
+    overflow:auto;
+}
+.my_list li{
+    position: relative;
+    border:1px solid #2d2d2d;
+    height:60px;
+    padding:10px 0 0 50px;
+    background: url(../images/icon_location.png) no-repeat 20px 50%;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.my_list .place{
+    font-size:16px;
+    font-weight:700;
+    display: block;
+    margin-bottom: 5px;
+}
+.my_list .city{
+    font-size:14px;
+    display: block;
+}
+.my_list .btn_mylist_del{
+    position: absolute;
+    right:10px;
+    top:10px;
+    width:24px;
+    height:24px;
+    background: transparent  url(../images/btn_close.png) no-repeat 50% 50%;
+    text-indent:-9999px;
+    overflow:hidden;
+    border:0
+}
+
+.login{
+    background: #fff;
+    width:400px;
+    margin:100px auto 0;
+    box-sizing:border-box;
+    padding:50px;
+}
+
+.login .tit{
+    display: block;
+    font-size:26px;
+    font-weight:400;
+    text-align: center;
+}
+.login .tit .name{
+    color:#4299e1
+}
+.login .txt{
+    font-size:14px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.login .i_email{
+    box-sizing:border-box;
+    width:100%;
+    padding:0 20px;
+    border:1px solid #ccc;
+    height:40px;
+    line-height:40px;
+    margin-bottom: 20px;
+}
+
+.login .btn_register{
+    width:100%;
+    height:40px;
+    color:#fff;
+    background:#4299e1;
+    border:0;
+    margin-bottom: 10px;
+}
+
+.login .btn_back{
+    width:100%;
+    height:40px;
+    color:#fff;
+    background:#666;
+    border:0;
+}
+
+.login .txt_warning{
+    display: none;
+    color:red;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:14px;
+}
+
+.login .i_pswd{
+    box-sizing:border-box;
+    width:100%;
+    padding:0 20px;
+    border:1px solid #ccc;
+    height:40px;
+    line-height:40px;
+    margin-bottom: 10px;
+}
+
+.login .i_pswd_confirm{
+    box-sizing:border-box;
+    width:100%;
+    padding:0 20px;
+    border:1px solid #ccc;
+    height:40px;
+    line-height:40px;
+    margin-bottom: 20px;
+}
+.login .gender{
+    margin-bottom: 10px;
+}
+
+.login .birth{
+    margin-bottom: 10px;
+    border:1px solid #ccc;
+    height:40px;
+    padding:0 15px;
+    cursor:pointer;
+}
+
+.login .accept{
+    font-size:13px;
+    margin-bottom: 20px;
 }

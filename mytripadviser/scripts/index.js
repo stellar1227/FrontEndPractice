@@ -45,8 +45,8 @@ $(function(){
     var _id = parseId(window.location.search);
     if(_id !== null) getDetail(_id);
 
-    
-   
+    //지도 불러오기 
+    $("#map").length && showMap();
 })
 
 //리스트 검색 요청
@@ -90,37 +90,6 @@ function getDetail(id){
 
         Galleria.loadTheme('libs/galleria/themes/classic/galleria.classic.min.js');
         Galleria.run('#gallery');
-         //지도 불러오기 
-        $("#map").length && showMap();
-        //지도 마커 표시
-        showMarker(r.position.x, r.position.y);
-
-        //등록하기
-        $(".btn_register").click(function(){
-            var myTrips = Cookies.getJSON('MYTRIPS');
-            if(!myTrips){ //존재하지 않을경우 빈 배열로 초기화
-                myTrips = [];
-            }
-
-            for (var i = 0; i <myTrips.length; i++){
-                if(myTrips[i].id == id){
-                    alert("이미 등록된 여행지 입니다.");
-                    return;
-                }
-            }
-            
-            myTrips.push({
-                id : id,
-                name : r.name,
-                cityName : r.cityName,
-                x : r.position.x,
-                y : r.position.y
-            })
-            Cookies.set('MYTRIPS',myTrips);
-            console.log(Cookies.get());
-            alert('여행지가 등록되었습니다.');
-                
-        });
     })
 }
 
@@ -166,20 +135,3 @@ function showMap(){
         zoom : 12
     })
 }
-
-//마커 보여주기 
-function showMarker(lat, lng){
-    var pos = {
-        lat : lat,
-        lng : lng
-    };
-
-    new google.maps.Marker({
-        position: pos,
-        map: Map
-    })
-
-    Map.panTo(pos)
-}
-
-
