@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>마이트립어드바이저 - 나의 여행지</title>
+    <link rel="stylesheet" href="libs/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="inner_header">
+                <h1 class="logo"><a href="index.html">마이트립어드바이저</a></h1>
+                <div class="util">
+                    <a href="mytrip.html">마이트립</a>
+                    <a href="register.html">회원가입</a>
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <section id="content">
+                <h2 class="blind">나의 여행지</h2>
+                <div class="my_trips_section">
+                   <div id="myMap" class="my_map"></div>
+                   <ul class="my_list" id="myTripList">
+                       
+                   </ul> 
+                </div>
+            </section>
+        </div>
+        <li id="template" class="mlist">
+            <strong class="place"></strong>
+            <span class="city"></span>
+            <button type="button" class="btn_mylist_del"></button>
+        </li>
+    </div>
+    <script src="libs/js.cookie.js"></script>
+    <script src="libs/jquery-3.3.1.min.js"></script>
+    <script src="libs/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="libs/galleria/galleria-1.5.7.min.js"></script>    
+    <script src="https://maps.googleapis.com/maps/api/js? key=AIzaSyCTFP8kj5HrQC34FbdS9qWzbUhLvN4G9KQ"></script>
+    <script src="scripts/myTrip.js"></script>
+</body>
+</html>
