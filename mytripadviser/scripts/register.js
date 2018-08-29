@@ -33,7 +33,6 @@ $(function(){
 
         /* gender */
         var gender = $("input[name='gender']:checked").val();
-        console.log(gender)
         if(!gender){
             $(".gender").next().html('필수항목입니다').show();
             return;
@@ -87,3 +86,6 @@ function submitData(email, password, gender, birth){
         console.log(r)
     })
 }
+
+
+ 
